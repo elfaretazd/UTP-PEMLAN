@@ -1,0 +1,72 @@
+/*
+ ______ _      ______      _____  ______ _______       
+|  ____| |    |  ____/\   |  __ \|  ____|__   __|/\    
+| |__  | |    | |__ /  \  | |__) | |__     | |  /  \   
+|  __| | |    |  __/ /\ \ |  _  /|  __|    | | / /\ \  
+| |____| |____| | / ____ \| | \ \| |____   | |/ ____ \ 
+|______|______|_|/_/    \_\_|  \_\______|  |_/_/    \_\
+                                                       
+    Nama : Elfareta Zabrina Dewi
+    NIM  : 245150701111015
+*/
+
+package utp.Mains;
+
+import utp.shapes.PrismaSegitigaSamaKaki;
+import utp.shapes.LimasPersegi;
+import utp.shapes.Tabung;
+
+import java.util.Scanner;
+
+public class Main {
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_PURPLE = "\u001B[35m";
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println(ANSI_PURPLE + "=============================================");
+        System.out.println("Kalkulator Bangun Ruang");
+        System.out.println("Elfareta Zabrina Dewi");
+        System.out.println("245150701111015");
+        System.out.println("=============================================" + ANSI_RESET);
+
+        System.out.println(ANSI_PURPLE + "Prisma Segitiga Sama Kaki");
+        System.out.println("=============================================" + ANSI_RESET);
+        System.out.print("Isikan alas     : ");
+        double alas = sc.nextDouble();
+        System.out.print("Isikan kaki     : ");
+        double kaki = sc.nextDouble();
+        System.out.print("Isikan tinggi   : ");
+        double tinggiPrisma = sc.nextDouble();
+        System.out.println("=============================================");
+
+        PrismaSegitigaSamaKaki prisma = new PrismaSegitigaSamaKaki(alas, kaki, tinggiPrisma);
+        prisma.printInfo();
+        System.out.println("=============================================");
+
+        System.out.println(ANSI_PURPLE + "Limas Persegi");
+        System.out.println("=============================================" + ANSI_RESET);
+        System.out.print("Isikan sisi     : ");
+        double sisi = sc.nextDouble();
+        System.out.print("\nIsikan tinggi   : ");
+        double tinggiLimas = sc.nextDouble();
+        System.out.println("=============================================");
+
+        LimasPersegi limas = new LimasPersegi(sisi, tinggiLimas);
+        limas.printInfo();
+        System.out.println("=============================================");
+
+        System.out.println(ANSI_PURPLE + "Tabung");
+        System.out.println("=============================================" + ANSI_RESET);
+        System.out.print("Isikan radius   : ");
+        double radius = sc.nextDouble();
+        System.out.print("Isikan tinggi   : ");
+        double tinggiTabung = sc.nextDouble();
+        System.out.println("=============================================");
+
+        Tabung tabung = new Tabung(radius, tinggiTabung);
+        tabung.printInfo();
+        System.out.println("=============================================");
+    }
+}
