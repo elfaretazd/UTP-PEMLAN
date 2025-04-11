@@ -1,0 +1,34 @@
+package utp.shapes;
+
+public class LimasPersegi {
+    private double sisi;
+    private double tinggi;
+
+    public LimasPersegi(double sisi, double tinggi) {
+        this.sisi = sisi;
+        this.tinggi = tinggi;
+    }
+
+    private double getLuasSisiTegak() {
+        double ts = Math.sqrt((sisi / 2) * (sisi / 2) + tinggi * tinggi);
+        return (ts * sisi) / 2;
+    }
+
+    private double getLuasAlas() {
+        return sisi * sisi;
+    }
+
+    public double getLuasPermukaan() {
+        return 4 * getLuasSisiTegak() + getLuasAlas();
+    }
+
+    public double getVolume() {
+        return getLuasAlas() * tinggi / 3;
+    }
+
+    public void printInfo() {
+        System.out.println("Nama            : Limas Persegi");
+        System.out.printf("Luas permukaan  : %.2f\n", getLuasPermukaan());
+        System.out.printf("Volume          : %.2f\n", getVolume());
+    }
+}
